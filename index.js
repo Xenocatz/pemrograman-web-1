@@ -1,8 +1,10 @@
 // buat loader atas
-let section = document.querySelector("section");
+let sections = document.querySelectorAll("section");
 
 setTimeout(() => {
-  section.classList.add("fade-in");
+  sections.forEach((section) => {
+    section.classList.add("fade-in");
+  });
 }, 400);
 
 const links = document.querySelectorAll("a.nav-item");
@@ -15,8 +17,10 @@ links.forEach((link) => {
       e.preventDefault();
       loader();
 
-      section.classList.remove("fade-in");
-      section.classList.add("fade-out");
+      sections.forEach((section) => {
+        section.classList.remove("fade-in");
+        section.classList.add("fade-out");
+      });
 
       setTimeout(() => {
         window.location.href = url;
